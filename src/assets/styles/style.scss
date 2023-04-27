@@ -1,0 +1,77 @@
+$colorblue: rgb(41, 193, 231);
+
+
+@mixin button($width, $bgcolor, $border) {
+    width: $width;
+    background-color: $bgcolor;
+    border: $border;
+    height: 29px;
+    border-radius: 5px;
+    color: white;
+    cursor:pointer;
+    &:hover {
+        scale: 1.01;
+    }
+}
+
+
+.input_box {
+    border: 1px solid #AAAAAA;
+    width: 94%;
+    margin-inline: auto;
+    padding: 15px 0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+    input {
+        width: 96%;
+        height: 25px;
+        margin-bottom: 15px;
+        border: 1px solid #AAAAAA;
+        border-radius: 5px;
+    }
+    
+    button {
+    @include button(97%,$colorblue,1px solid $colorblue);
+    padding-inline: auto;
+    margin-bottom: 5px
+    }
+}
+
+.filter_btn {
+    @include button (30%,$colorblue,1px solid $colorblue);   
+    margin-inline: 1%;
+}
+
+.list_items {
+    border: 1px solid #AAAAAA;
+    width: 91%;
+    height: 35px;
+    margin-inline: auto;
+    margin-top: 15px;
+    padding-top: 8px;
+    font-weight: 600;
+    padding-inline: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.delete_btn, .back_btn {
+    @include button (30%,red,1px solid red);
+    margin-top: 35px;
+    margin-inline: 1%;
+}
+
+.del_item {
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: red;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    &:hover {
+        scale: 1.1;
+        color: rgb(196, 8, 8);
+    }
+}
